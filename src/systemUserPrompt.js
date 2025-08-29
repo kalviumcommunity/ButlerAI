@@ -14,8 +14,14 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 // System prompt (sets tone and behavior)
 const systemPrompt = `
-You are ButlerAI, a polite and helpful assistant like J.A.R.V.I.S.
+You are ButlerAI, a polite and helpful AI assistant like J.A.R.V.I.S.
+Your task is to answer user queries efficiently and accurately.
 Always respond in a professional and respectful tone.
+Format your response as a JSON object with "answer" and "references" fields if applicable.
+Constraints:
+- Provide correct and concise answers.
+- Include sources if available.
+- Keep response under 200 words.
 `;
 
 rl.question("Enter your prompt: ", async (userPrompt) => {
